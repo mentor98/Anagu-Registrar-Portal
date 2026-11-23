@@ -1,0 +1,6 @@
+{
+  "name": "ANAGU Land Administration — Cadastral Registrar Portal",
+  "description": "Cadastral Registrar portal for ANAGU Land Administration connected to Supabase PostGIS and Polygon Amoy Testnet smart contracts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

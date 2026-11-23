@@ -57,3 +57,67 @@
     display: none !important;
   }
 }
+
+.anagu-grass-hero {
+  background-image:
+    radial-gradient(circle at 72% 24%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0) 45%),
+    radial-gradient(circle at 25% 78%, rgba(146, 226, 88, 0.55) 0%, rgba(146, 226, 88, 0) 52%),
+    linear-gradient(155deg, #F3FDE9 0%, #DFF9CA 34%, #BDF195 66%, #92E258 100%);
+}
+
+@keyframes grassSway {
+  0%, 100% {
+    transform: rotate(-2.5deg) scaleY(1);
+  }
+  50% {
+    transform: rotate(2.5deg) scaleY(1.03);
+  }
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.75) translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25) translateY(-6px);
+  }
+}
+
+@keyframes orbitalFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-grass-sway {
+  transform-origin: bottom center;
+  animation: grassSway 5.5s ease-in-out infinite;
+}
+
+.animate-grass-sway-delayed {
+  transform-origin: bottom center;
+  animation: grassSway 6.8s ease-in-out 1.2s infinite;
+}
+
+.animate-sparkle {
+  animation: sparkleTwinkle 3.2s ease-in-out infinite;
+}
+
+.animate-orbital-float {
+  animation: orbitalFloat 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-grass-sway,
+  .animate-grass-sway-delayed,
+  .animate-sparkle,
+  .animate-orbital-float {
+    animation: none !important;
+  }
+}
+

@@ -9,9 +9,12 @@ import {
   Lock,
   ShieldCheck,
 } from 'lucide-react';
-import { ANAGU_LOGO_URL, AUTH_HERO_IMAGE_URL } from '../lib/contracts';
+import { AUTH_HERO_IMAGE_URL } from '../lib/contracts';
 import { apiFetch, setAuthToken } from '../lib/api';
 import type { StaffProfile } from '../types/registrar';
+
+const LOGIN_LOGO_URL =
+  'https://res.cloudinary.com/jinrrp4r/image/upload/v1795507507/Glossy_Emerald_A_Orbit_Logo_joxrb8.png';
 
 interface LoginScreenProps {
   onAuthenticated: (staff: StaffProfile) => void;
@@ -67,7 +70,7 @@ export function LoginScreen({ onAuthenticated }: LoginScreenProps) {
             {/* Centered Brand Stack */}
             <div className="flex flex-col items-center text-center">
               <img
-                src={ANAGU_LOGO_URL}
+                src={LOGIN_LOGO_URL}
                 alt="ANAGU Land Administration"
                 referrerPolicy="no-referrer"
                 className="w-[60px] h-[60px] object-contain"
@@ -153,21 +156,30 @@ export function LoginScreen({ onAuthenticated }: LoginScreenProps) {
               <p className="text-xs font-semibold text-slate-500 text-center mb-3.5">
                 ANAGU Portals
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                 <a
                   href="https://anagu.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors bg-emerald-700 hover:bg-emerald-800 text-white shadow-sm shadow-emerald-900/10"
+                  className="inline-flex items-center justify-center gap-1.5 px-2.5 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors bg-emerald-700 hover:bg-emerald-800 text-white shadow-sm shadow-emerald-900/10"
                 >
                   <span>Land Owners</span>
+                  <ExternalLink className="w-3.5 h-3.5 shrink-0 opacity-90" />
+                </a>
+                <a
+                  href="https://anagu-admin.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 px-2.5 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors bg-slate-800 hover:bg-slate-900 text-white shadow-sm shadow-slate-900/10"
+                >
+                  <span>Admin Portal</span>
                   <ExternalLink className="w-3.5 h-3.5 shrink-0 opacity-90" />
                 </a>
                 <a
                   href="https://anagu-governor-portal.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors bg-teal-700 hover:bg-teal-800 text-white shadow-sm shadow-teal-900/10"
+                  className="inline-flex items-center justify-center gap-1.5 px-2.5 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors bg-teal-700 hover:bg-teal-800 text-white shadow-sm shadow-teal-900/10"
                 >
                   <span>Governors Portal</span>
                   <ExternalLink className="w-3.5 h-3.5 shrink-0 opacity-90" />
@@ -231,7 +243,7 @@ export function LoginScreen({ onAuthenticated }: LoginScreenProps) {
               ) : (
                 <div className="w-80 h-80 rounded-full bg-emerald-100/70 border border-emerald-300 flex items-center justify-center">
                   <img
-                    src={ANAGU_LOGO_URL}
+                    src={LOGIN_LOGO_URL}
                     alt="ANAGU Monogram"
                     referrerPolicy="no-referrer"
                     className="w-28 h-28 object-contain"
